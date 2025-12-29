@@ -28,6 +28,17 @@ export const metadata: Metadata = {
     google: "yIB0-2wEbuolYW67FZtWgr7L5xVUd-YzbOvzwLI5WVs", // Nanti diisi setelah daftar GSC
   },
 
+  keywords: [
+    "Jasa Lubang Kancing",
+    "Pasang Kancing",
+    "Wastra",
+    "Overdeck",
+    "Neci",
+    "Benang Jahit",
+    "Alat-alat Jahit",
+    "Raditya Collection",
+  ],
+
   openGraph: {
     title: "Raditya Collection - Spesialis Lubang Kancing",
     description: "Jasa lubang & pasang kancing presisi di Singaraja. Hubungi kami!",

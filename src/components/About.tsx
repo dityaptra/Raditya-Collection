@@ -24,7 +24,7 @@ const About = () => {
               <div className="text-xs md:text-sm text-gray-800 font-bold leading-tight uppercase tracking-wider">
                 Tahun
                 <br />
-                Pengalaman
+                Berdiri
               </div>
             </div>
           </div>
@@ -37,8 +37,8 @@ const About = () => {
             <p className="text-gray-600 mb-6 text-lg leading-relaxed">
               Di <strong>Raditya Collection</strong>, kami memahami bahwa lubang
               kancing yang rapi adalah kunci kualitas sebuah pakaian. Berlokasi
-              di Singaraja, kami mendedikasikan diri sebagai spesialis{" "}
-              <i>finishing</i> untuk mendukung penjahit, butik, dan konveksi.
+              di Singaraja, kami mendedikasikan diri sebagai spesialis 
+              finishing untuk mendukung penjahit, butik, dan konveksi.
             </p>
 
             <p className="text-gray-600 text-lg mb-3 leading-relaxed">

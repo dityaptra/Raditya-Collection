@@ -12,7 +12,7 @@ const Location = () => {
           </h2>
           <div className="w-24 h-1 bg-sunshine mx-auto mt-4 rounded-full"></div>
           <p className="mt-4 text-gray-600">
-            Silakan datang langsung untuk konsultasi atau melihat koleksi bahan kami.
+            Konsultasikan kebutuhan lubang kancing dan aksesoris jahit Anda langsung di sini. Kunjungi tempat kami untuk melihat langsung proses pengerjaan, mengecek kualitas, dan berkomunikasi agar hasil akhir busana Anda <strong className="text-sunshine">presisi</strong> dan <strong className="text-sunshine">sempurna</strong>.
           </p>
         </div>
 
