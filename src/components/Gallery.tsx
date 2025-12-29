@@ -29,12 +29,10 @@ const Gallery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center p-2 bg-sunshine/10 rounded-full mb-4">
-              <svg className="w-6 h-6 text-sunshine" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Galeri <span className="text-sunshine">Kami</span>
             </h2>
+            <div className="w-24 h-1 bg-sunshine mx-auto mt-4 rounded-full"></div>
             <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
               Klik pada gambar untuk melihat detail.
             </p>

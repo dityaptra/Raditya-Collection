@@ -31,7 +31,7 @@ const Hero = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       {/* 2. KONTEN TENGAH */}

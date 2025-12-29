@@ -3,7 +3,7 @@ const Services = () => {
     {
       id: "01",
       title: "Lubang Kancing",
-      desc: "Pembuatan lubang kancing yang presisi, rapi, dan sesuai standar garmen untuk kemeja, celana, atau jas.",
+      desc: "Pembuatan lubang kancing untuk kemeja, celana, atau jas.",
       // Ikon Kancing
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z M19 21a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v14z" />
@@ -12,7 +12,7 @@ const Services = () => {
     {
       id: "02",
       title: "Pasang Kancing",
-      desc: "Pemasangan berbagai jenis kancing dengan teknik jahit yang kuat dan tidak mudah lepas.",
+      desc: "Pemasangan berbagai jenis kancing pakaian.",
       // Ikon Jarum & Benang (Simbolis)
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
@@ -21,7 +21,7 @@ const Services = () => {
     {
       id: "03",
       title: "Jahit Wastra",
-      desc: "Layanan jahit tepi kain wastra (kain adat) atau selendang dengan hasil jahitan yang halus.",
+      desc: "Layanan jahit tepi kain wastra (kain adat) atau selendang.",
       // Ikon Kain/Scissor cut
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
@@ -30,7 +30,7 @@ const Services = () => {
     {
       id: "04",
       title: "Overdeck",
-      desc: "Jahitan khusus (kumis) untuk bagian kelim kaos atau pakaian berbahan stretch agar elastis dan rapi.",
+      desc: "Jahitan khusus (kumis) untuk bagian kelim kaos.",
       // Ikon Zigzag Stitch
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 12l4-4 4 4 4-4 4 4" />
@@ -39,7 +39,7 @@ const Services = () => {
     {
       id: "05",
       title: "Neci",
-      desc: "Penyelesaian tepi kain (neci) yang rapat dan rapi, sangat cocok untuk jilbab, pashmina, atau rok.",
+      desc: "Penyelesaian tepi kain (neci) yang rapat dan rapi.",
       // Ikon Layers/Fabric
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -48,7 +48,7 @@ const Services = () => {
     {
       id: "06",
       title: "Layanan Lainnya",
-      desc: "Kami juga melayani kebutuhan jahit lainnya sesuai permintaan Anda dengan kualitas terbaik.",
+      desc: "Kami juga melayani kebutuhan jahit lainnya.",
       // Ikon Plus/More
       icon: (
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -83,7 +83,7 @@ const Services = () => {
               </div>
 
               {/* Ikon dengan Background Gradient */}
-              <div className="relative z-10 w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-sunshine/20 to-white flex items-center justify-center text-sunshine group-hover:bg-sunshine group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:shadow-sunshine/30">
+              <div className="relative z-10 w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-sunshine/20 to-white flex items-center justify-center  bg-sunshine text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:shadow-sunshine/30">
                 <svg
                   className="w-8 h-8"
                   fill="none"

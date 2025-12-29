@@ -96,7 +96,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-700/50 mt-12 pt-8 text-center text-gray-500 text-sm">
-        &copy; 2022 - {new Date().getFullYear()} Raditya Collection. All Rights Reserved.
+        &copy; 2022 - {new Date().getFullYear()} Raditya Collection.
       </div>
     </footer>
   );
