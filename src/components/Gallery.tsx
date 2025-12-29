@@ -34,7 +34,7 @@ const Gallery = () => {
             </h2>
             <div className="w-24 h-1 bg-sunshine mx-auto mt-4 rounded-full"></div>
             <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              Klik pada gambar untuk melihat detail.
+              Selain menawarkan jasa, kami juga menjual beberapa <strong className="text-sunshine">bahan</strong> dan <strong className="text-sunshine">alat-alat jahit</strong>.
             </p>
           </div>
 
@@ -43,7 +43,6 @@ const Gallery = () => {
             {galleryItems.map((item, index) => (
               <div 
                 key={index} 
-                // Tambahkan onClick untuk membuka gambar
                 onClick={() => setSelectedImage(item.src)}
                 className="group relative h-72 rounded-2xl overflow-hidden shadow-lg cursor-zoom-in"
               >
@@ -72,13 +71,12 @@ const Gallery = () => {
       </section>
 
       {/* --- LIGHTBOX / MODAL POPUP --- */}
-      {/* Hanya muncul jika selectedImage tidak null */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setSelectedImage(null)} // Klik background untuk menutup
         >
-          {/* Tombol Close (X) */}
+          {/* Tombol Close */}
           <button 
             className="absolute top-6 right-6 text-white/70 hover:text-white transition transform hover:scale-110"
             onClick={() => setSelectedImage(null)}
@@ -89,13 +87,13 @@ const Gallery = () => {
           {/* Container Gambar Besar */}
           <div 
             className="relative w-full max-w-5xl h-auto max-h-[90vh] aspect-video rounded-lg overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()} // Mencegah klik pada gambar menutup modal
+            onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={selectedImage}
               alt="Preview Galeri Besar"
               fill
-              className="object-contain" // Agar gambar tidak terpotong (fit to screen)
+              className="object-contain"
               priority
             />
           </div>

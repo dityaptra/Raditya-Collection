@@ -7,7 +7,6 @@ import Link from "next/link";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Daftar menu
   const navLinks = [
     { name: "Beranda", href: "#home" },
     { name: "Tentang Kami", href: "#about" },
@@ -15,17 +14,13 @@ const Navbar = () => {
     { name: "Galeri", href: "#gallery" },
   ];
 
-  // --- FUNGSI NAVIGASI MANUAL ---
-  // Fungsi ini memaksa scroll terjadi setiap kali diklik
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
-    e.preventDefault(); // Mencegah perilaku default browser (loncat langsung)
-    setIsOpen(false);   // Tutup menu mobile jika sedang terbuka
+    e.preventDefault();
+    setIsOpen(false);  
 
-    // Cari elemen tujuan berdasarkan ID (menghapus tanda #)
     const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
 
-    // Lakukan scroll halus jika elemen ditemukan
     if (elem) {
       elem.scrollIntoView({
         behavior: "smooth",
@@ -61,7 +56,6 @@ const Navbar = () => {
               <Link 
                 key={link.name}
                 href={link.href}
-                // Pasang handleScroll di sini
                 onClick={(e) => handleScroll(e, link.href)}
                 className="text-gray-600 hover:text-sunshine font-medium transition text-sm lg:text-base cursor-pointer"
               >
@@ -106,7 +100,6 @@ const Navbar = () => {
             <Link 
               key={link.name}
               href={link.href}
-              // Pasang handleScroll di sini juga
               onClick={(e) => handleScroll(e, link.href)}
               className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-sunshine hover:bg-gray-50 rounded-lg cursor-pointer"
             >

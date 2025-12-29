@@ -2,11 +2,10 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    // UBAH DISINI: Warna background diganti menjadi #1F2329 (Dark Charcoal ala Domainesia)
     <footer className="bg-[#1F2329] text-white py-12 border-t-4 border-sunshine">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        {/* KOLOM 1: Brand & Sosmed */}
+        {/* Brand & Sosmed */}
         <div>
           <h3 className="text-2xl font-bold text-sunshine mb-4">
             Raditya Collection
@@ -18,10 +17,9 @@ const Footer = () => {
           
           {/* --- BAGIAN SOCIAL MEDIA --- */}
           <div className="flex space-x-4">
-            {/* Facebook */}
             <Link 
               href="https://www.facebook.com/share/17wEVhQN99/" 
-              // Tombol menggunakan bg-gray-700/50 agar menyatu halus dengan background gelap
+              
               className="w-10 h-10 rounded-full bg-gray-700/50 flex items-center justify-center text-gray-300 hover:bg-sunshine hover:text-white transition-all duration-300"
               aria-label="Facebook"
             >
@@ -30,7 +28,6 @@ const Footer = () => {
               </svg>
             </Link>
 
-            {/* Instagram */}
             <Link 
               href="https://www.instagram.com/raditya.collectionnn/?igsh=MXRvbWF5bHN2MHN3eA==" 
               className="w-10 h-10 rounded-full bg-gray-700/50 flex items-center justify-center text-gray-300 hover:bg-sunshine hover:text-white transition-all duration-300"
@@ -41,7 +38,6 @@ const Footer = () => {
               </svg>
             </Link>
 
-            {/* WhatsApp */}
             <Link 
               href="https://wa.me/6285946182092" 
               target="_blank"
@@ -56,7 +52,7 @@ const Footer = () => {
 
         </div>
 
-        {/* KOLOM 2: Kontak */}
+        {/* KOLOM Kontak */}
         <div>
           <h4 className="text-lg font-bold mb-6 text-white border-b-2 border-sunshine/30 inline-block pb-1">
             Hubungi Kami
@@ -77,7 +73,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* KOLOM 3: Jam Operasional */}
+        {/* KOLOM Jam Operasional */}
         <div>
           <h4 className="text-lg font-semibold mb-6 text-white border-b-2 border-sunshine/30 inline-block pb-1">
             Jam Operasional

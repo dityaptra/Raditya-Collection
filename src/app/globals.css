@@ -1,12 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  /* Mendaftarkan warna custom */
   --color-sunshine: #7a6200;       /* Base color */
   --color-sunshine-light: #9c7e00; /* Untuk hover */
   --color-sunshine-50: #fdfbe6;    /* Untuk background tipis */
 
-  /* Jika kamu butuh shadow dengan warna custom (opsional) */
   --shadow-glow: 0 0 15px rgba(122, 98, 0, 0.3);
 }
 
@@ -14,9 +12,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 3rem;
 }
-/* Reset dasar Next.js (biasanya sudah ada, tapi pastikan ini ada 
-  agar background default-nya putih sesuai request) 
-*/
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -26,4 +22,31 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .animate-gold-shimmer {
+    background: linear-gradient(
+      to right,
+      #FFE169 20%,
+      #ffffff 50%,
+      #FFE169 80%
+    );
+    background-size: 200% auto;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shine 4s linear infinite;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
