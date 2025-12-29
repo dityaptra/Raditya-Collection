@@ -1,22 +1,25 @@
 @import "tailwindcss";
 
+@theme {
+  /* Mendaftarkan warna custom */
+  --color-sunshine: #7a6200;       /* Base color */
+  --color-sunshine-light: #9c7e00; /* Untuk hover */
+  --color-sunshine-50: #fdfbe6;    /* Untuk background tipis */
+
+  /* Jika kamu butuh shadow dengan warna custom (opsional) */
+  --shadow-glow: 0 0 15px rgba(122, 98, 0, 0.3);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+/* Reset dasar Next.js (biasanya sudah ada, tapi pastikan ini ada 
+  agar background default-nya putih sesuai request) 
+*/
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
