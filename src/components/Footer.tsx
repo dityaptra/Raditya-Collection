@@ -54,7 +54,7 @@ const Footer = () => {
 
         {/* KOLOM Kontak */}
         <div>
-          <h4 className="text-lg font-bold mb-6 text-white border-b-2 border-sunshine/30 inline-block pb-1">
+          <h4 className="text-lg font-bold mb-6 text-white border-b-2 border-sunshine inline-block pb-1">
             Hubungi Kami
           </h4>
           <ul className="space-y-4 text-gray-400 text-sm">
@@ -75,7 +75,7 @@ const Footer = () => {
 
         {/* KOLOM Jam Operasional */}
         <div>
-          <h4 className="text-lg font-semibold mb-6 text-white border-b-2 border-sunshine/30 inline-block pb-1">
+          <h4 className="text-lg font-semibold mb-6 text-white border-b-2 border-sunshine inline-block pb-1">
             Jam Operasional
           </h4>
           <ul className="space-y-3 text-gray-400">
@@ -83,7 +83,7 @@ const Footer = () => {
               <span>Setiap Hari:</span>
               <span className="text-white font-medium">09.00 - 17.00</span>
             </li>
-            <li className="flex justify-between text-sunshine/80">
+            <li className="flex justify-between font-bold text-sunshine">
               <span>Hari Rahinan:</span>
               <span className="font-bold">Tutup</span>
             </li>
