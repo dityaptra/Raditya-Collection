@@ -57,7 +57,7 @@ const About = () => {
                 <p className="text-gray-600 text-lg leading-relaxed">
                   Di <strong className="text-sunshine">Raditya Collection</strong>, kami memahami bahwa lubang
                   kancing yang rapi adalah kunci kualitas sebuah pakaian. Berlokasi
-                  di Singaraja, kami mendedikasikan diri sebagai spesialis
+                  di <strong className="text-sunshine">Singaraja</strong>, kami mendedikasikan diri sebagai spesialis
                   finishing untuk mendukung penjahit, butik, dan konveksi.
                 </p>
 
