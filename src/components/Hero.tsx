@@ -55,12 +55,12 @@ const Hero = () => {
         <motion.div
           initial={{ scale: 1.2 }} // Mulai agak besar (Zoom In)
           animate={{ scale: 1 }}   // Perlahan mengecil ke normal
-          transition={{ duration: 10, ease: "easeOut" }} // Durasi 10 detik
+          transition={{ duration: 4, ease: "easeOut" }} // Durasi 10 detik
           className="relative w-full h-full"
         >
           <Image
             src="/images/hero.jpg"
-            alt="Latar Belakang Workshop Jahit"
+            alt="Latar Belakang"
             fill
             className="object-cover"
             priority={true}
@@ -121,19 +121,6 @@ const Hero = () => {
         </motion.div>
 
       </motion.div>
-
-      {/* --- Scroll Indicator (Panah Kecil di Bawah) --- */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-        className="absolute bottom-10 z-20 text-white/50"
-      >
-        <svg className="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </motion.div>
-
     </section>
   );
 };
