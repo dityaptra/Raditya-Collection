@@ -17,13 +17,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.radityacollection.web.id'),
+  metadataBase: new URL("https://www.radityacollection.web.id"),
   title: {
     default: "Raditya Collection: Jasa Lubang & Pasang Kancing di Singaraja",
     template: "%s | Raditya Collection",
   },
-  description: "Spesialis jasa lubang kancing dan pasang kancing profesional di Singaraja. Hasil presisi standar garmen, harga bersahabat, kualitas hebat.",
-  
+  description:
+    "Spesialis jasa lubang kancing dan pasang kancing profesional di Singaraja. Hasil presisi standar garmen, harga bersahabat, kualitas hebat.",
+
   verification: {
     google: "yIB0-2wEbuolYW67FZtWgr7L5xVUd-YzbOvzwLI5WVs",
   },
@@ -40,14 +41,14 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Raditya Collection - Spesialis Lubang Kancing dan Pasang Kancing",
-    description: "Jasa lubang & pasang kancing presisi di Singaraja. Hubungi kami!",
-    url: 'https://www.radityacollection.web.id',
-    siteName: 'Raditya Collection',
-    locale: 'id_ID',
-    type: 'website',
+    title: "Raditya Collection: Spesialis Lubang Kancing dan Pasang Kancing",
+    description:
+      "Jasa lubang & pasang kancing presisi di Singaraja. Hubungi kami!",
+    url: "https://www.radityacollection.web.id",
+    siteName: "Raditya Collection",
+    locale: "id_ID",
+    type: "website",
   },
-
 };
 
 export default function RootLayout({
@@ -60,9 +61,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <StructuredData />
-        {children}
-        <Analytics />
+        <div className="overflow-x-hidden w-full relative min-h-screen">
+          <StructuredData />
+          {children}
+          <Analytics />
+        </div>
       </body>
     </html>
   );
