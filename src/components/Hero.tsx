@@ -13,15 +13,15 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // Jeda 0.2 detik antar elemen (Judul -> Teks -> Tombol)
-        delayChildren: 0.2,   // Tunggu 0.3 detik setelah loading baru mulai
+        staggerChildren: 0.3, // Jeda 0.2 detik antar elemen (Judul -> Teks -> Tombol)
+        delayChildren: 0.3,   // Tunggu 0.3 detik setelah loading baru mulai
       },
     },
   };
 
   // Varian untuk Item (Muncul dari bawah ke atas)
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0,
