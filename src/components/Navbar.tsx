@@ -1,104 +1,154 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { HiMenuAlt3, HiX } from "react-icons/hi";
+
+const navLinks = [
+  { name: "Beranda", href: "#home" },
+  { name: "Tentang", href: "#about" },
+  { name: "Layanan", href: "#services" },
+  { name: "Galeri", href: "#gallery" },
+  { name: "Lokasi", href: "#location" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  const navLinks = [
-    { name: "Beranda", href: "#home" },
-    { name: "Tentang Kami", href: "#about" },
-    { name: "Layanan", href: "#services" },
-    { name: "Galeri", href: "#gallery" },
-  ];
+  // 1. Logic Scroll Spy
+  useEffect(() => {
+    const handleScrollSpy = () => {
+      const scrollPosition = window.scrollY + 100;
+      navLinks.forEach((link) => {
+        const targetId = link.href.replace("#", "");
+        const section = document.getElementById(targetId);
+        if (section) {
+          const { offsetTop, offsetHeight } = section;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(targetId);
+          }
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScrollSpy);
+    return () => window.removeEventListener("scroll", handleScrollSpy);
+  }, []);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+  // 2. Logic Click Smooth Scroll
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string,
+  ) => {
     e.preventDefault();
-    setIsOpen(false);  
+    setIsOpen(false); // Tutup menu mobile otomatis
 
     const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
 
     if (elem) {
-      elem.scrollIntoView({
-        behavior: "smooth",
-      });
+      // Jika elemen ketemu, scroll kesana
+      elem.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(targetId);
+    } else {
+      // DEBUGGING: Jika tidak jalan, cek console browser
+      console.warn(
+        `Elemen dengan id="${targetId}" tidak ditemukan! Pastikan Anda sudah menambah id="${targetId}" di section terkait.`,
+      );
+
+      // Fallback: Paksa pindah URL jika ID tidak ketemu (opsional)
+      window.location.href = href;
     }
   };
 
   return (
-    <nav className="fixed w-full bg-white shadow-md z-50">
+    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 ml-3 md:ml-8">
-          
+        <div className="flex justify-between items-center h-20">
           {/* --- LOGO SECTION --- */}
-          <div className="shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
+          <div className="shrink-0 flex items-center gap-2">
+            <Link
+              href="/"
+              className="flex items-center"
+              onClick={(e) => handleScroll(e, "#home")}
+            >
               <Image
                 src="/images/logo.png"
                 alt="Logo Raditya Collection"
-                width={200}
-                height={200}
-                className="h-16 w-auto object-contain transition"
+                width={150}
+                height={150}
+                className="h-10 w-auto object-contain" // Ukuran logo disesuaikan
                 priority
               />
             </Link>
-            <Link href="/" className="text-2xl font-bold text-sunshine">
+            {/* PERBAIKAN 1: Hapus 'hidden sm:block' agar muncul di HP */}
+            <Link
+              href="/"
+              className="text-lg md:text-2xl font-bold text-sunshine block"
+              onClick={(e) => handleScroll(e, "#home")}
+            >
               Raditya<span className="text-gray-800">Collection</span>
             </Link>
           </div>
 
           {/* --- DESKTOP MENU --- */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleScroll(e, link.href)}
-                className="text-gray-600 hover:text-sunshine font-medium transition text-sm lg:text-base cursor-pointer"
-              >
-                {link.name}
-              </Link>
-            ))}
-
-            {/* Tombol CTA Hubungi Kami */}
-            <Link 
+            {navLinks.map((link, index) => {
+              const isActive = activeSection === link.href.replace("#", "");
+              return (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e: any) => handleScroll(e, link.href)}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className={`relative group transition-colors duration-300 font-medium cursor-pointer ${
+                    isActive
+                      ? "text-sunshine"
+                      : "text-gray-600 hover:text-sunshine"
+                  }`}
+                >
+                  {link.name}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-sunshine transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+                  ></span>
+                </motion.a>
+              );
+            })}
+            <a
               href="#contact"
-              onClick={(e) => handleScroll(e, "#contact")} 
-              className="px-6 py-2.5 rounded-full bg-sunshine text-white font-medium hover:bg-sunshine-light transition shadow-lg shadow-sunshine/30 text-sm lg:text-base cursor-pointer"
+              onClick={(e: any) => handleScroll(e, "#contact")}
+              className="px-6 py-2.5 rounded-xl bg-sunshine text-white font-medium hover:bg-sunshine/90 transition shadow-lg shadow-sunshine/20 cursor-pointer"
             >
               Hubungi Kami
-            </Link>
+            </a>
           </div>
 
-          {/* --- MOBILE MENU BUTTON --- */}
-          <div className="flex items-center md:hidden mr-4">
+          {/* --- MOBILE TOGGLE BUTTON --- */}
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Buka Menu Navigasi"
-              className="text-gray-600 hover:text-sunshine focus:outline-none p-2"
+              className="text-gray-700 hover:text-sunshine text-3xl cursor-pointer p-2 transition-colors"
             >
-              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {isOpen ? <HiX /> : <HiMenuAlt3 />}
             </button>
           </div>
         </div>
       </div>
 
       {/* --- MOBILE MENU DROPDOWN --- */}
-      <div 
+      <div
         className={`md:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <div className="px-4 pt-2 pb-6 space-y-2">
           {navLinks.map((link) => (
-            <Link 
+            <Link
               key={link.name}
               href={link.href}
               onClick={(e) => handleScroll(e, link.href)}
@@ -107,9 +157,9 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          
-          <Link 
-            href="#contact" 
+
+          <Link
+            href="#contact"
             onClick={(e) => handleScroll(e, "#contact")}
             className="block px-3 py-3 text-base font-bold text-sunshine bg-sunshine/5 rounded-lg mt-4 cursor-pointer"
           >

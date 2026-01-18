@@ -104,19 +104,19 @@ const Hero = () => {
           className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
         >
           <Link
-            href="#contact"
-            onClick={(e) => handleScroll(e, "#contact")}
-            className="px-8 py-3 rounded-full bg-sunshine text-white font-bold text-lg hover:bg-white hover:text-sunshine transition-all duration-300 shadow-lg hover:shadow-sunshine/50 cursor-pointer hover:scale-105 active:scale-95"
+            href="#location"
+            onClick={(e) => handleScroll(e, "#location")}
+            className="px-8 py-3 rounded-xl bg-sunshine text-white font-bold text-lg hover:bg-white hover:text-sunshine transition-all duration-300 shadow-lg hover:shadow-sunshine/50 cursor-pointer hover:scale-105 active:scale-95"
           >
-            Hubungi Kami
+            Lokasi Kami
           </Link>
 
           <Link
             href="#services"
             onClick={(e) => handleScroll(e, "#services")}
-            className="px-8 py-3 rounded-full border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
+            className="px-8 py-3 rounded-xl border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95"
           >
-            Lihat Layanan
+            Layanan Kami
           </Link>
         </motion.div>
 

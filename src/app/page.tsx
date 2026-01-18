@@ -15,8 +15,8 @@ export default function Home() {
       <About />
       <Services />
       <Gallery />
-      <CtaSection />
       <Location />
+      <CtaSection />
       <Footer />
     </main>
   );

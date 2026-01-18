@@ -78,7 +78,7 @@ const About = () => {
                   "Harga Bersahabat, Kualitas Hebat",
                 ].map((text, index) => (
                   <div key={index} className="flex items-center gap-3 group">
-                    <div className="w-6 h-6 rounded-full bg-sunshine/10 flex items-center justify-center text-sunshine group-hover:bg-sunshine group-hover:text-white transition-colors shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-sunshine/10 flex items-center justify-center text-sunshine shrink-0">
                       <svg
                         className="w-4 h-4"
                         fill="none"
