@@ -11,15 +11,15 @@ const Gallery = () => {
   // Data gambar dummy
   const galleryItems = [
     {
-      src: "/images/kancing.jpg",
+      src: "/images/kancing.webp",
       alt: "Koleksi Aksesoris & Kancing",
     },
     {
-      src: "/images/hero.jpg",
+      src: "/images/hero.webp",
       alt: "Mesin Kancing Profesional",
     },
     {
-      src: "/images/alatdanbahan.jpg",
+      src: "/images/alatdanbahan.webp",
       alt: "Bahan dan alat-alat jahit",
     },
   ];
