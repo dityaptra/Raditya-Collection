@@ -106,7 +106,7 @@ const Hero = () => {
           <Link
             href="#location"
             onClick={(e) => handleScroll(e, "#location")}
-            className="px-8 py-3 rounded-xl bg-sunshine text-white font-bold text-lg hover:bg-white hover:text-sunshine transition-all duration-300 shadow-lg hover:shadow-sunshine/50 cursor-pointer hover:scale-105 active:scale-95"
+            className="px-8 py-3 rounded-xl bg-sunshine border-2 border-sunshine text-white font-bold text-lg hover:bg-white hover:text-sunshine transition-all duration-300 shadow-lg hover:shadow-sunshine/50 cursor-pointer hover:scale-105 active:scale-95"
           >
             Lokasi Kami
           </Link>

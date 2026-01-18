@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const navLinks = [
   { name: "Beranda", href: "#home" },
@@ -46,32 +46,29 @@ const Navbar = () => {
     href: string,
   ) => {
     e.preventDefault();
-    setIsOpen(false); // Tutup menu mobile otomatis
+    setIsOpen(false);
 
     const targetId = href.replace("#", "");
     const elem = document.getElementById(targetId);
 
     if (elem) {
-      // Jika elemen ketemu, scroll kesana
       elem.scrollIntoView({ behavior: "smooth" });
       setActiveSection(targetId);
     } else {
-      // DEBUGGING: Jika tidak jalan, cek console browser
       console.warn(
         `Elemen dengan id="${targetId}" tidak ditemukan! Pastikan Anda sudah menambah id="${targetId}" di section terkait.`,
       );
-
-      // Fallback: Paksa pindah URL jika ID tidak ketemu (opsional)
       window.location.href = href;
     }
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
+    <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
+          
           {/* --- LOGO SECTION --- */}
-          <div className="shrink-0 flex items-center gap-2">
+          <div className="shrink-0 flex items-center gap-0.5">
             <Link
               href="/"
               className="flex items-center"
@@ -82,14 +79,14 @@ const Navbar = () => {
                 alt="Logo Raditya Collection"
                 width={150}
                 height={150}
-                className="h-10 w-auto object-contain" // Ukuran logo disesuaikan
+                className="h-12 md:h-14 w-auto object-contain"
                 priority
               />
             </Link>
-            {/* PERBAIKAN 1: Hapus 'hidden sm:block' agar muncul di HP */}
+            
             <Link
               href="/"
-              className="text-lg md:text-2xl font-bold text-sunshine block"
+              className="text-xl md:text-2xl font-bold text-sunshine block tracking-tight"
               onClick={(e) => handleScroll(e, "#home")}
             >
               Raditya<span className="text-gray-800">Collection</span>
@@ -111,7 +108,7 @@ const Navbar = () => {
                   className={`relative group transition-colors duration-300 font-medium cursor-pointer ${
                     isActive
                       ? "text-sunshine"
-                      : "text-gray-600 hover:text-sunshine"
+                      : "text-gray-700 hover:text-sunshine"
                   }`}
                 >
                   {link.name}
@@ -124,9 +121,9 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={(e: any) => handleScroll(e, "#contact")}
-              className="px-6 py-2.5 rounded-xl bg-sunshine text-white font-medium hover:bg-sunshine/90 transition shadow-lg shadow-sunshine/20 cursor-pointer"
+              className="px-6 py-2.5 rounded-xl bg-sunshine text-white font-medium hover:bg-sunshine/90 transition shadow-lg shadow-sunshine/20 cursor-pointer transform hover:scale-105 active:scale-95"
             >
-              Hubungi Kami
+              Kontak
             </a>
           </div>
 
@@ -134,9 +131,9 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-sunshine text-3xl cursor-pointer p-2 transition-colors"
+              className="text-sunshine text-3xl cursor-pointer p-2 transition-colors hover:bg-gray-50 rounded-md"
             >
-              {isOpen ? <HiX /> : <HiMenuAlt3 />}
+              {isOpen ? <HiX /> : <HiMenu />}
             </button>
           </div>
         </div>
@@ -146,13 +143,13 @@ const Navbar = () => {
       <div
         className={`md:hidden bg-white border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
-        <div className="px-4 pt-2 pb-6 space-y-2">
+        <div className="px-4 pt-2 pb-6 space-y-2 shadow-inner">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={(e) => handleScroll(e, link.href)}
-              className="block px-3 py-3 text-base font-medium text-gray-700 hover:text-sunshine hover:bg-gray-50 rounded-lg cursor-pointer"
+              className="block px-4 py-3 text-lg font-medium text-gray-700 hover:text-sunshine hover:bg-yellow-50 rounded-xl cursor-pointer transition-colors"
             >
               {link.name}
             </Link>
@@ -161,9 +158,9 @@ const Navbar = () => {
           <Link
             href="#contact"
             onClick={(e) => handleScroll(e, "#contact")}
-            className="block px-3 py-3 text-base font-bold text-sunshine bg-sunshine/5 rounded-lg mt-4 cursor-pointer"
+            className="block px-4 py-3 text-lg font-bold text-center text-white bg-sunshine rounded-xl mt-4 cursor-pointer shadow-md active:scale-95 transition-transform"
           >
-            Hubungi Kami
+            Kontak
           </Link>
         </div>
       </div>

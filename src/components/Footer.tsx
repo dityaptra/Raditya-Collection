@@ -82,10 +82,6 @@ const Footer = () => {
               <span>Setiap Hari:</span>
               <span className="text-gray-300 font-medium">09.00 - 17.00</span>
             </li>
-            <li className="flex justify-between font-bold text-sunshine-light">
-              <span>Hari Rahinan:</span>
-              <span className="font-bold">Tutup</span>
-            </li>
           </ul>
         </div>
       </div>
