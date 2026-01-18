@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import StructuredData from "@/components/StructuredData";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,7 +63,6 @@ export default function RootLayout({
         <div className="overflow-x-hidden w-full relative min-h-screen">
           <StructuredData />
           {children}
-          <Analytics />
         </div>
       </body>
     </html>
