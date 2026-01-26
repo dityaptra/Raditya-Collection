@@ -53,9 +53,9 @@ const Hero = () => {
       {/* --- BACKGROUND IMAGE DENGAN ANIMASI ZOOM-OUT (KEN BURNS) --- */}
       <div className="absolute inset-0 z-0">
         <motion.div
-          initial={{ scale: 1.2 }} // Mulai agak besar (Zoom In)
-          animate={{ scale: 1 }}   // Perlahan mengecil ke normal
-          transition={{ duration: 4, ease: "easeOut" }} // Durasi 10 detik
+          initial={{ scale: 1.2 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 4, ease: "easeOut" }}
           className="relative w-full h-full"
         >
           <Image
@@ -64,7 +64,8 @@ const Hero = () => {
             fill
             className="object-cover"
             priority={true}
-            quality={80}
+            quality={75}
+            sizes="(max-width: 768px) 100vw, 100vw"
           />
         </motion.div>
         {/* Overlay Hitam */}
