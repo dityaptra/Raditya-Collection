@@ -55,7 +55,8 @@ const Location = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">Kontak</h4>
-                  <p className="text-gray-600 text-sm mt-1">+62 859 4618 2092</p>
+                  <p className="text-gray-600 text-sm mt-1">Telp 1: +62 859 4618 2092</p>
+                  <p className="text-gray-600 text-sm mt-1">Telp 2: +62 819 9556 2665</p>
                 </div>
               </div>
             </div>

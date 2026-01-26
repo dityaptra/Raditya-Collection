@@ -67,8 +67,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
-          {/* --- LOGO SECTION --- */}
-          <div className="shrink-0 flex items-center gap-0.5">
+          {/* --- BAGIAN 1: LOGO (KIRI) --- */}
+          <div className="shrink-0 flex items-center gap-1 cursor-pointer z-20">
             <Link
               href="/"
               className="flex items-center"
@@ -93,8 +93,9 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* --- DESKTOP MENU --- */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* --- BAGIAN 2: MENU LINKS (TENGAH) --- */}
+          {/* Menggunakan 'flex-1' dan 'justify-center' agar posisi di tengah */}
+          <div className="hidden md:flex flex-1 justify-center items-center space-x-8">
             {navLinks.map((link, index) => {
               const isActive = activeSection === link.href.replace("#", "");
               return (
@@ -118,12 +119,17 @@ const Navbar = () => {
                 </motion.a>
               );
             })}
+          </div>
+
+          {/* --- BAGIAN 3: TOMBOL KONTAK (KANAN) --- */}
+          {/* Dipisahkan dari mapping link agar bisa ditaruh di paling kanan */}
+          <div className="hidden md:flex items-center justify-end z-20">
             <a
               href="#contact"
               onClick={(e: any) => handleScroll(e, "#contact")}
               className="px-6 py-2.5 rounded-xl bg-sunshine text-white font-medium hover:bg-sunshine/90 transition shadow-lg shadow-sunshine/20 cursor-pointer transform hover:scale-105 active:scale-95"
             >
-              Kontak
+              Hubungi Kami
             </a>
           </div>
 
@@ -160,7 +166,7 @@ const Navbar = () => {
             onClick={(e) => handleScroll(e, "#contact")}
             className="block px-4 py-3 text-lg font-bold text-center text-white bg-sunshine rounded-xl mt-4 cursor-pointer shadow-md active:scale-95 transition-transform"
           >
-            Kontak
+            Hubungi Kami
           </Link>
         </div>
       </div>
