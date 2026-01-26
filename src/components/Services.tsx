@@ -1,5 +1,3 @@
-"use client";
-import { motion, Variants } from "framer-motion";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const Services = () => {
@@ -54,37 +52,11 @@ const Services = () => {
     },
   ];
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50,
-    },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        type: "spring",
-        stiffness: 50,
-        damping: 15  
-      }
-    },
-  };
-
   return (
     <section id="services" className="py-24 bg-sunshine-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header Section (Tetap pakai RevealOnScroll untuk judul) */}
+        {/* Header Section (Animasi Muncul Bersamaan) */}
         <RevealOnScroll width="100%">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -97,49 +69,45 @@ const Services = () => {
           </div>
         </RevealOnScroll>
 
-        {/* --- GRID ANIMASI BARU --- */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 -m-4"
-        >
+        {/* Grid Layout */}
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 overflow-hidden p-6 md:p-8 -m-6 md:-m-8">
+        {/* ^^^ Tambahkan overflow-hidden di div parent agar animasi tidak bikin scroll samping */}
+          
           {services.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants} 
-              whileHover={{ 
-                y: -10, 
-                transition: { duration: 0.3 }
-              }}
-              className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col items-center text-center h-full cursor-default transition-shadow duration-300"
+            <RevealOnScroll 
+              key={index} 
+              width="100%" 
+              delay={index * 0.1}
+              direction={index % 2 === 0 ? "left" : "right"} 
             >
-              
-              {/* Icon Container */}
-              <div className="relative z-10 w-16 h-16 mb-6 rounded-2xl bg-sunshine/10 text-sunshine flex items-center justify-center group-hover:bg-sunshine group-hover:text-white transition-all duration-300">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  {item.icon}
-                </svg>
-              </div>
+              <div
+                className="group relative bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden h-full flex flex-col items-center text-center"
+              >
+                
+                <div className="absolute -right-4 -bottom-8 text-9xl font-extrabold text-gray-50 opacity-50 group-hover:text-sunshine/10 group-hover:scale-110 transition-all duration-500 z-0 pointer-events-none select-none">
+                  {item.id}
+                </div>
 
-              {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-sunshine transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
+                <div className="relative z-10 w-16 h-16 mb-6 rounded-2xl bg-linear-to-br from-sunshine/20 to-white flex items-center justify-center bg-sunshine text-white transition-all duration-300">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {item.icon}
+                  </svg>
+                </div>
 
-              {/* Garis Bawah Pemanis (Muncul dari kiri ke kanan saat hover) */}
-              <div className="absolute bottom-0 left-0 w-0 h-1 bg-sunshine group-hover:w-full transition-all duration-500 ease-out rounded-b-2xl"></div>
-              
-            </motion.div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-sunshine transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="absolute bottom-0 left-0 w-0 h-1 bg-sunshine group-hover:w-full transition-all duration-500 ease-out"></div>
+              </div>
+            </RevealOnScroll>
           ))}
-        </motion.div>
-
+        </div>
       </div>
     </section>
   );

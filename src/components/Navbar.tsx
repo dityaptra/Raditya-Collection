@@ -137,6 +137,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Menu"
               className="text-sunshine text-3xl cursor-pointer p-2 transition-colors hover:bg-gray-50 rounded-md"
             >
               {isOpen ? <HiX /> : <HiMenu />}
