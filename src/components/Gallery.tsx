@@ -1,14 +1,12 @@
-"use client"; // Wajib ada karena kita pakai interaksi (useState)
+"use client";
 
 import { useState } from "react";
 import Image from "next/image";
-import { RevealOnScroll } from "@/components/RevealOnScroll"; // Import komponen animasi
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const Gallery = () => {
-  // State untuk menyimpan gambar mana yang sedang dibuka
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-  // Data gambar dummy
   const galleryItems = [
     {
       src: "/images/kancing.webp",
@@ -48,8 +46,8 @@ const Gallery = () => {
               <RevealOnScroll 
                 key={index} 
                 width="100%" 
-                delay={index * 0.15} // Delay bertahap (0s, 0.15s, 0.3s)
-                direction="up"       // Muncul dari bawah
+                delay={index * 0.15} 
+                direction="up"      
               >
                 <div
                   onClick={() => setSelectedImage(item.src)}
@@ -84,7 +82,7 @@ const Gallery = () => {
       {selectedImage && (
         <div
           className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm animate-in fade-in duration-200"
-          onClick={() => setSelectedImage(null)} // Klik background untuk menutup
+          onClick={() => setSelectedImage(null)} 
         >
           {/* Tombol Close */}
           <button
