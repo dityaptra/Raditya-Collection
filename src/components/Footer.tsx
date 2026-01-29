@@ -13,8 +13,7 @@ const Footer = () => {
           <p className="text-gray-300 mb-6 leading-relaxed text-sm">
             Jasa lubang kancing dan pasang kancing profesional dengan mengutamakan kualitas, waktu, dan kepuasan pelanggan.
           </p>
-          
-          {/* --- BAGIAN SOCIAL MEDIA --- */}
+
           <div className="flex space-x-4">
             <Link 
               href="https://www.facebook.com/share/17wEVhQN99/" 
