@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',     
       allow: '/',         
-      disallow: '/private/', // (Opsional) Blokir folder private jika nanti ada
+      disallow: '/private/',
     },
     sitemap: 'https://www.radityacollection.web.id/sitemap.xml',
   };
